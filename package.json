@@ -2,6 +2,11 @@
   "name": "connect-cleaner",
   "version": "0.0.1",
   "description": "connect-cleaner - simple url cleaner and normalizer",
+  "keywords": [
+    "connect",
+    "clear",
+    "url"
+  ],
   "main": "index.js",
   "repository": {
     "type": "git",
