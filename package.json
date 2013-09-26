@@ -1,0 +1,15 @@
+{
+  "name": "connect-cleaner",
+  "version": "0.0.1",
+  "description": "connect-cleaner - simple url cleaner and normalizator",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://alex4k@github.com/alex4k/connect-cleaner"
+  },
+  "author": "Alex Fork <4ounder@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alex4k/connect-cleaner/issues"
+  }
+}
