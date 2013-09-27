@@ -1,6 +1,6 @@
 {
   "name": "connect-cleaner",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "connect-cleaner - simple url cleaner and normalizer",
   "keywords": [
     "connect",
@@ -8,6 +8,7 @@
     "url"
   ],
   "main": "index.js",
+  "homepage": "https://github.com/alex4k/connect-cleaner",
   "repository": {
     "type": "git",
     "url": "https://alex4k@github.com/alex4k/connect-cleaner"
