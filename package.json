@@ -1,6 +1,6 @@
 {
   "name": "connect-cleaner",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "connect-cleaner - simple url cleaner and normalizer",
   "keywords": [
     "connect",
