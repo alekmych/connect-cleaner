@@ -1,10 +1,12 @@
 {
   "name": "connect-cleaner",
-  "version": "0.0.3",
-  "description": "connect-cleaner - simple url cleaner and normalizer",
+  "version": "1.0.0",
+  "description": "connect-cleaner - simple url sanitizer",
   "keywords": [
-    "connect",
+    "cleaner",
     "clear",
+    "connect",
+    "sanitize",
     "url"
   ],
   "main": "index.js",
@@ -17,5 +19,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alex4k/connect-cleaner/issues"
+  },
+  "devDependencies": {
+    "should": "~1.3.0",
+    "mocha": "~1.13.0"
   }
 }

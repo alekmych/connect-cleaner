@@ -1,5 +1,5 @@
 #connect-cleaner
-Simple url cleaner and normalizer for [connect](https://github.com/senchalabs/connect).
+Simple url sanitizer for [connect](https://github.com/senchalabs/connect).
 
 Redirects trailing slash urls, normalizes case difference and cleans some garbage from your sweet URL. Viva SEO!
 
