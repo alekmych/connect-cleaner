@@ -1,6 +1,6 @@
 {
   "name": "connect-cleaner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "connect-cleaner - simple url sanitizer",
   "keywords": [
     "cleaner",
