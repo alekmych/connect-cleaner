@@ -1,7 +1,7 @@
 #connect-cleaner
-Simple url sanitizer for [connect](https://github.com/senchalabs/connect).
+Simple url sanitizer for [connect](https://github.com/senchalabs/connect) and [express](https://github.com/visionmedia/express).
 
-Redirects trailing slash urls, normalizes case difference and cleans some garbage from your sweet URL. Viva SEO!
+Redirects trailing slash urls, normalizes letter case difference and cleans some garbage from your URLs. (Hello SEO)
 
 Inspired by [connect-slashes](https://github.com/avinoamr/connect-slashes).
 
@@ -17,19 +17,32 @@ var connect = require('connect');
 var cleaner = require('connect-cleaner');
 
 connect()
-  .use(cleaner(302))
-  .use(someConnectMiddleWare())
+  .use(cleaner(302)) // idealy put cleaner as earlier as possible
+  .use(someMiddleware(302))
   .listen(8080);
-
-// /vehicles/Sedans/?color=Black,Dark%20Blue&milage=lt10&
-// becomes…
-// /vehicles/sedans?color=black,dark_blue&milage=lt10
 ```
+Optionaly `clear` takes one argument which can be an integer (`redirect code`) or object (`options`).
 
-Also, `cleaner` function can take optional integer argument, which will be used as an HTTP code.
+##Options
+###If `Nuber`:
+- sets redirect code (defaults to 301)
 
-##Notes
-Connect-cleaner pritty opinionated:
+###If `Object`:
+- `add <false>` - determines if `cleaner` should add trailing slash, if `true` sets another option `clean` to `false`
+- `clean <true>` - determines if `cleaner` should clean trailing slash(es), defaults to `true`. Can be overrided by `add` and `sanitize` options
+- `code <301>` - determines redirect code
+- `normilize <false>` - determines if `cleaner` should normilize difference in letter cases of `pathname`. It's important to note that `cleaner` only fixes letter casing on `pathname`, `querystring` not affected
+- `snitize <false>` - determines if `claener` should clean (sanitize) some garbage in url (includes clearing triling slashes, so `clean` option is automaticaly sets to `false`)
 
-* currently, middleware only cuts trailing slashes, there is no adding functionality
-* case normalization is permanent and would not be changed in future, diffenerent cases in URL kinda stupid
+##Examples
+Setting|Input|Redirect|Code
+:-:|:-:|:-:|:-:
+(default)|`/Users//?foo=Bar&age=21&`|`/Users?foo=Bar&age=21&`|`301`
+`code: 302`|`/Users//?foo=Bar&age=21&`|`/Users?foo=Bar&age=21&`|`302`
+`normalize, code: 302`|`/Users//?foo=Bar&age=21&`|`/users?foo=Bar&age=21&`|`302`
+`sanitize, code: 302`|`/Users//?foo=Bar&age=21&`|`/users?foo=Bar&age=21`|`302`
+(default)|`/users?foo=Bar&age=21`|-| No redirect, url is fine
+`add`|`/users?foo=Bar&age=21`|`/users/?foo=Bar&age=21`|`301`
+
+##License
+MIT
