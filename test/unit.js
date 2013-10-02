@@ -1,7 +1,5 @@
-var should = require('should');
-
+var should  = require('should');
 var cleaner = require('..');
-var log = cleaner.utils.log;
 
 var connect = function connect(opts) {
   var options = opts || {};
@@ -64,16 +62,16 @@ describe('cleaner', function() {
     });
 
     it('should be exposed', function(done) {
-      should.exist(instance.options);
+      should.exist(instance._options);
       done();
     });
 
     it('should have properties', function(done) {
-      instance.options.should.have.property('add');
-      instance.options.should.have.property('clean');
-      instance.options.should.have.property('code');
-      instance.options.should.have.property('normalize');
-      instance.options.should.have.property('sanitize');
+      instance._options.should.have.property('add');
+      instance._options.should.have.property('clean');
+      instance._options.should.have.property('code');
+      instance._options.should.have.property('normalize');
+      instance._options.should.have.property('sanitize');
       done();
     });
 
@@ -81,23 +79,23 @@ describe('cleaner', function() {
       it('should be `clean: true` and `code: 302` by default', function(done) {
         instance = cleaner();
 
-        instance.options.clean.should.be.true;
-        instance.options.code.should.equal(301);
+        instance._options.clean.should.be.true;
+        instance._options.code.should.equal(301);
         done();
       });
 
       it('`code` should be set to 302', function(done) {
         instance = cleaner({ 'code': 302 });
 
-        instance.options.code.should.equal(302);
+        instance._options.code.should.equal(302);
         done();
       });
 
       it('`clean` should be false when `add` is true', function(done) {
         instance = cleaner({ 'add': true });
 
-        instance.options.add.should.be.true;
-        instance.options.clean.should.be.false;
+        instance._options.add.should.be.true;
+        instance._options.clean.should.be.false;
         done();
       });
 
@@ -107,16 +105,16 @@ describe('cleaner', function() {
           'clean': true
         });
 
-        instance.options.add.should.be.true;
-        instance.options.clean.should.be.false;
+        instance._options.add.should.be.true;
+        instance._options.clean.should.be.false;
         done();
       });
 
       it('`clean` should be false when `sanitize` is true', function(done) {
         instance = cleaner({ 'sanitize': true });
 
-        instance.options.sanitize.should.be.true;
-        instance.options.clean.should.be.false;
+        instance._options.sanitize.should.be.true;
+        instance._options.clean.should.be.false;
         done();
       });
     });
