@@ -1,6 +1,6 @@
 {
   "name": "connect-cleaner",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "connect-cleaner - simple url sanitizer",
   "keywords": [
     "cleaner",
@@ -9,6 +9,9 @@
     "sanitize",
     "url"
   ],
+  "scripts": {
+  	"test": "mocha -R spec test/*"
+	},
   "main": "index.js",
   "homepage": "https://github.com/alex4k/connect-cleaner",
   "repository": {
