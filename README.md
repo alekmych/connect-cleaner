@@ -19,7 +19,7 @@ var cleaner = require('connect-cleaner');
 connect()
   .use(connect.responseTime())
   .use(cleaner(302)) // ideally, put cleaner as earlier as possible
-  .use(someMiddleware(302))
+  .use(someMiddleware())
   .listen(8080);
 ```
 Optionaly `clear` takes one argument which is object (`options`).
