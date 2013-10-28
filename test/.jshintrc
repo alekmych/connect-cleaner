@@ -1,0 +1,6 @@
+{
+  "expr": true,
+  "globals": ["before", "describe", "it"],
+  "node": true,
+  "strict": false
+}

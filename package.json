@@ -10,7 +10,7 @@
     "url"
   ],
   "scripts": {
-		"test": "mocha -R spec test/*"
+		"test": "mocha --bail --check-leaks --ui bdd --reporter spec test/*"
 	},
   "main": "index.js",
   "homepage": "https://github.com/alex4k/connect-cleaner",
