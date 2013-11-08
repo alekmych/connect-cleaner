@@ -35,7 +35,14 @@ describe('cleaner', function() {
         done();
       });
 
-      it('should set `code: 302`', function(done) {
+      it('should set `code: 302`, using `Number`', function(done) {
+        instance = cleaner(302);
+
+        instance._options.code.should.equal(302);
+        done();
+      });
+
+      it('should set `code: 302`, using `Object`', function(done) {
         instance = cleaner({ code: 302 });
 
         instance._options.code.should.equal(302);
