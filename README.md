@@ -37,7 +37,7 @@ By default, `cleaner` responses with "fast 400"* on requests like `//?/?///`. Op
 ##Post-initialization mutablity
 ```javascript
 var instance = cleaner(); // We need access to middleware for later configuring
-app.use(instance);
+app.use(instance());
   
 // Later...
 instance.set(code, 302);
