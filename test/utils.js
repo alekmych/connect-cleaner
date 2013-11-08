@@ -5,27 +5,28 @@ exports.connect = function connect(opts) {
   c._fn = null;
 
   c._test = {
-    '_body': null,
-    '_code': null,
-    '_header': null,
-    '_next': null,
-    '_redirect': null,
-    '_url': null
+    _body: null,
+    _code: null,
+    _header: null,
+    _next: null,
+    _redirect: null,
+    _url: null
   };
 
   c.req = {
-    'method': opts.method || 'GET',
-    'url': opts.url || '/'
+    method: opts.method || 'GET',
+    url: opts.url || '/'
   };
 
   c.res = {
-    'writeHead': function(code, headers) {
-      c._test._code = code;
-      c._test._url = headers.Location;
+    statusCode: null,
+    writeHead: function(code, headers) {
+      c._test._code = c.res.statusCode = code;
+      if (headers.Location) c._test._url = headers.Location;
     },
-    'end': function(body) {
+    end: function(body) {
       if (body) c._test._body = body;
-      c._test._redirect = true;
+      if (c._test._url) c._test._redirect = true;
     }
   };
 
@@ -43,6 +44,7 @@ exports.connect = function connect(opts) {
       throw Error('connect mock needs some middleware');
     } else {
       c._fn(c.req, c.res, c.next);
+      c._test._code = c.res.statusCode;
       if (cb) cb(c._test);
     }
   };

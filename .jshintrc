@@ -1,5 +1,5 @@
 {
   "strict": false,
   "node": true,
-  "globals": [ "add", "clean", "defaults", "fixLeadingSlash", "fixOptions", "inform", "isBigEnough", "isDefined", "isDirty", "isType", "log", "needsAdd", "needsClean", "needsNormalize", "needsSanitize", "normalize", "RE_amp", "RE_clean", "RE_garbage", "RE_hash", "RE_question", "RE_slash", "redirect", "sanitize", "singularize", "skip", "toString" ]
+  "globals": [ "add", "clean", "defaults", "fixLeadingSlash", "fixOptions", "inform", "isBigEnough", "isDefined", "isDirty", "isType", "log", "needsAdd", "needsClean", "needsNormalize", "needsSanitize", "normalize", "RE_amp", "RE_clean", "RE_garbage", "RE_hash", "RE_question", "RE_slash", "redirect", "sanitize", "singularize", "skip", "toString", "copy" ]
 }
