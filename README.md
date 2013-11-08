@@ -71,5 +71,10 @@ Options|Request|Response|Code
 (default)|`/users?foo=Bar&age=21`|-| Pass thrue, url is fine
 `add`|`/users?foo=Bar&age=21`|`/users/?foo=Bar&age=21`|`301`
 
+##TODO
+- add option to pass Error thrue connect stack (next(err))
+- write benchamrk
+- if need optimize code for performance
+
 ##License
 MIT
