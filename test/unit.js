@@ -85,7 +85,7 @@ describe('cleaner', function() {
 
         it('should return `options` copy', function(done) {
           instance.get().should.be.an.Object;
-          instance.get().should.have.keys(['add', 'clean', 'code', 'normalize', 'sanitize']);
+          instance.get().should.have.keys(['add', 'clean', 'code', 'immediate', 'normalize', 'pass', 'sanitize']);
           done();
         });
 
