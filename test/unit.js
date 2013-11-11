@@ -85,16 +85,16 @@ describe('cleaner', function() {
 
         it('should return `options` copy', function(done) {
           instance.get().should.be.an.Object;
-          instance.get().should.have.keys(['add', 'clean', 'code', 'immediate', 'normalize', 'pass', 'sanitize']);
+          instance.get().should.have.keys(['add', 'clean', 'code', 'normalize', 'pass', 'sanitize']);
           done();
         });
 
-        it('should return `code, 301` (default)', function(done) {
+        it('should return `code: 301` (default)', function(done) {
           instance.get('code').should.equal(301);
           done();
         });
 
-        it('should set `code, 302`', function(done) {
+        it('should set `code: 302`', function(done) {
           instance.set('code', 302).get().should.include({ code: 302 });
           done();
         });
