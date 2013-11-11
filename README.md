@@ -72,9 +72,10 @@ Options|Request|Response|Code
 `add`|`/users?foo=Bar&age=21`|`/users/?foo=Bar&age=21`|`301`
 
 ##TODO
-- add option to pass Error's through connect stack (next(err))
+- [WIP] add option to pass Error's through connect stack (next(err))
+- [WIP] performance optimizition
+- [WIP] refactoring
 - write benchamrk
-- if need optimize code for performance
 
 ##License
 MIT
