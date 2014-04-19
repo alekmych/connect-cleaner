@@ -1,4 +1,5 @@
-#connect-cleaner
+# connect-cleaner
+# THIS PLUGIN IS BROKEN, REWRITE IS COMING
 Simple url sanitizer for [connect](https://github.com/senchalabs/connect) and [express](https://github.com/visionmedia/express).
 
 Redirects trailing slash urls, normalizes letter case differences and cleans garbage from your URLs.
